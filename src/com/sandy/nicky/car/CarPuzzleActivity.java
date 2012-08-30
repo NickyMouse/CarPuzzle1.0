@@ -296,64 +296,59 @@ public class CarPuzzleActivity extends Activity {
 
 	private AlertDialog buildErrorDialog(Context context) {
 		Builder builder = new AlertDialog.Builder(context);
-		builder.setPositiveButton("error", null);
+		builder.setTitle("出错喽~");
+		builder.setMessage("^_^只能移动相邻两块图片哦").setCancelable(false)
+				.setPositiveButton("确定", null);
 		return builder.create();
 	}
 
 	private AlertDialog buildSuccessDialog(final Context context) {
 		Builder builder = new AlertDialog.Builder(context);
 		builder.setTitle("Well Done!");
-		builder.setMessage("Congratulations!")
-				.setCancelable(false)
-				.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		builder.setMessage("保存图片？").setCancelable(false)
+				.setPositiveButton("取消", null)
+				.setNegativeButton("保存", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
-						CarPuzzleActivity.this.finish();
+						CarPuzzleActivity cpa = (CarPuzzleActivity) context;
+						CarEnum car = CarEnum
+								.getCarEnumByPuzzleImgId(cpa.image);
+						Bitmap bitmap = cpa.bitmap;
+						File d = new File("/sdcard/CarPuzzle/");
+						if (!d.exists()) {
+							d.mkdirs();
+						}
+						File f = new File("/sdcard/CarPuzzle/"
+								+ car.getEnName() + ".png");
+						int i = 0;
+						while (f.exists()) {
+							f = new File("/sdcard/CarPuzzle/" + car.getEnName()
+									+ "[" + i + "]" + ".png");
+							i++;
+						}
+						try {
+							f.createNewFile();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						FileOutputStream fOut = null;
+						try {
+							fOut = new FileOutputStream(f);
+						} catch (FileNotFoundException e) {
+							e.printStackTrace();
+						}
+						bitmap.compress(CompressFormat.PNG, 100, fOut);
+						try {
+							fOut.flush();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						try {
+							fOut.close();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
 					}
-				})
-				.setNegativeButton("SAVE",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								CarPuzzleActivity cpa = (CarPuzzleActivity) context;
-								CarEnum car = CarEnum
-										.getCarEnumByPuzzleImgId(cpa.image);
-								Bitmap bitmap = cpa.bitmap;
-								File d = new File("/sdcard/CarPuzzle/");
-								if (!d.exists()) {
-									d.mkdirs();
-								}
-								File f = new File("/sdcard/CarPuzzle/"
-										+ car.getEnName() + ".png");
-								int i = 0;
-								while (f.exists()) {
-									f = new File("/sdcard/CarPuzzle/"
-											+ car.getEnName() + "[" + i + "]"
-											+ ".png");
-									i++;
-								}
-								try {
-									f.createNewFile();
-								} catch (IOException e) {
-									e.printStackTrace();
-								}
-								FileOutputStream fOut = null;
-								try {
-									fOut = new FileOutputStream(f);
-								} catch (FileNotFoundException e) {
-									e.printStackTrace();
-								}
-								bitmap.compress(CompressFormat.PNG, 100, fOut);
-								try {
-									fOut.flush();
-								} catch (IOException e) {
-									e.printStackTrace();
-								}
-								try {
-									fOut.close();
-								} catch (IOException e) {
-									e.printStackTrace();
-								}
-							}
-						});
+				});
 
 		return builder.create();
 	}

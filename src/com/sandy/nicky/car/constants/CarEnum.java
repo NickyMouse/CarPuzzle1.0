@@ -60,7 +60,24 @@ public enum CarEnum {
 			"解放", "jiefang", R.drawable.jiefang, R.drawable.car_jiefang), CHANGAN(
 			"长安", "changan", R.drawable.changan, R.drawable.car_changan), GREATWALL(
 			"长城", "greatwall", R.drawable.greatwall, R.drawable.car_greatwall), ZHONGHUA(
-			"中华", "zhonghua", R.drawable.zhonghua, R.drawable.car_ruiqi);
+			"中华", "zhonghua", R.drawable.zhonghua, R.drawable.car_ruiqi),
+
+	// 意大利
+	ALFA_ROMEO("阿尔法罗密欧", "alfa_romeo", R.drawable.alfa_romeo,
+			R.drawable.car_alfa_romeo), BUGATTI("布加迪", "bugatti",
+			R.drawable.bugatti, R.drawable.car_bugatti), FERRARI("法拉利",
+			"ferrari", R.drawable.ferrari, R.drawable.car_ferrari), FIAT("菲亚特",
+			"fiat", R.drawable.fiat, R.drawable.car_fiat), LAMBORGHINI("兰博基尼",
+			"lamborghini", R.drawable.lamborghini, R.drawable.car_lamborghini), MASERATI(
+			"玛莎拉蒂", "maserati", R.drawable.maserati, R.drawable.car_maserati), PAGANI(
+			"帕加尼", "pagani", R.drawable.pagani, R.drawable.car_pagani),
+
+	// 法国
+	VENTURI("文图瑞", "venturi", R.drawable.venturi, R.drawable.car_venturi), CITROEN(
+			"雪铁龙", "citroen", R.drawable.citroen, R.drawable.car_citroen), PEUGEOT(
+			"标志", "peugeot", R.drawable.peugeot, R.drawable.car_peugeot), RENAULT(
+			"雷诺", "renault", R.drawable.renault, R.drawable.car_renault);
+
 	private static Map<String, CarEnum> map = new HashMap<String, CarEnum>();
 	private static Map<String, CarEnum> cnMap = new HashMap<String, CarEnum>();
 	private static Map<Integer, CarEnum> puzzleImgIdMap = new HashMap<Integer, CarEnum>();
