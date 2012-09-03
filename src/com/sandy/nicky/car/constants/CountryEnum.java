@@ -7,9 +7,19 @@ import com.sandy.nicky.car.R;
 
 public enum CountryEnum {
 
-	CN("中国", "cn", R.drawable.cn), JP("日本", "jp", R.drawable.jp), GE("德国",
-			"ge", R.drawable.ge), US("美国", "us", R.drawable.us), IT("意大利",
-			"it", R.drawable.it),FR("法国","fr",R.drawable.fr);
+	GE("德国", "ge", R.drawable.ge),
+	//
+	FR("法国", "fr", R.drawable.fr),
+	//
+	US("美国", "us", R.drawable.us),
+	//
+	JP("日本", "jp", R.drawable.jp),
+	//
+	IT("意大利", "it", R.drawable.it),
+	//
+	EN("英国", "en", R.drawable.en),
+	//
+	CN("中国", "cn", R.drawable.cn);
 
 	private String cnName;
 	private String enName;

@@ -14,10 +14,9 @@ public enum CarEnum {
 			R.drawable.lorinser, R.drawable.car_lorinser), MAYBACH("迈巴赫",
 			"maybach", R.drawable.maybach, R.drawable.car_maybach), OPEL("欧宝",
 			"opel", R.drawable.opel, R.drawable.car_opel), PORSCHE("保时捷",
-			"porsche", R.drawable.porsche, R.drawable.car_porsche), RR("莱斯莱斯",
-			"rr", R.drawable.rr, R.drawable.car_rr), SMART("斯玛特", "smart",
-			R.drawable.smart, R.drawable.car_smart), BMW("宝马", "bmw",
-			R.drawable.bmw, R.drawable.car_bmw),
+			"porsche", R.drawable.porsche, R.drawable.car_porsche), SMART(
+			"斯玛特", "smart", R.drawable.smart, R.drawable.car_smart), BMW("宝马",
+			"bmw", R.drawable.bmw, R.drawable.car_bmw),
 
 	// 美国
 	GMC("GMC", "gmc", R.drawable.gmc, R.drawable.car_gmc), JEEP("吉普", "jeep",
@@ -76,7 +75,18 @@ public enum CarEnum {
 	VENTURI("文图瑞", "venturi", R.drawable.venturi, R.drawable.car_venturi), CITROEN(
 			"雪铁龙", "citroen", R.drawable.citroen, R.drawable.car_citroen), PEUGEOT(
 			"标志", "peugeot", R.drawable.peugeot, R.drawable.car_peugeot), RENAULT(
-			"雷诺", "renault", R.drawable.renault, R.drawable.car_renault);
+			"雷诺", "renault", R.drawable.renault, R.drawable.car_renault),
+
+	// 英国
+	ASTON_MARTIN("阿斯顿 马丁", "aston_martin", R.drawable.aston_martin,
+			R.drawable.car_aston_martin), BENTLEY("宾利", "bentley",
+			R.drawable.bentley, R.drawable.car_bentley), JAGUAR("捷豹",
+			"jaguar", R.drawable.jaguar, R.drawable.car_jaguar), LAND_ROVER(
+			"路虎", "land_rover", R.drawable.land_rover,
+			R.drawable.car_land_rover), MCLAREN("迈凯轮", "mclaren",
+			R.drawable.mclaren, R.drawable.car_mclaren), ROVER("罗孚", "rover",
+			R.drawable.rover, R.drawable.car_rover), RR("莱斯莱斯", "rr",
+			R.drawable.rr, R.drawable.car_rr);
 
 	private static Map<String, CarEnum> map = new HashMap<String, CarEnum>();
 	private static Map<String, CarEnum> cnMap = new HashMap<String, CarEnum>();
